@@ -1,0 +1,2 @@
+Control
+-DCATKIN_DEVEL_PREFIX=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel -DCMAKE_INSTALL_PREFIX=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/install -G Unix Makefiles
