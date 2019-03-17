@@ -1,3 +1,5 @@
+# Support program for mask search
+
 import cv2
 
 def do_nothing(x):

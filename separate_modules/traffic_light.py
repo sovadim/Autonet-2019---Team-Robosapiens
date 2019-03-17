@@ -1,16 +1,11 @@
 import cv2
 import numpy as np
+from separate_modules import settings as s
 
-#RED_GREEN = cv2.imread('images/traffic_lights/red_green.jpg')
-RED = cv2.imread('images/traffic_lights/red.jpg')
-GREEN = cv2.imread('images/traffic_lights/green.jpg')
-
-IMAGES = [RED, GREEN]
-
-for i in range(len(IMAGES)):
+for i in range(len(s.IMAGES)):
     #cv2.imshow('window' + str(i), IMAGES[i])
 
-    cutedImage = IMAGES[i][10:90, 10:40]
+    cutedImage = s.IMAGES[i][10:90, 10:40]
     cv2.imshow(str(i), cutedImage)
 
     hsv = cv2.cvtColor(cutedImage, cv2.COLOR_BGR2HSV)
@@ -37,3 +32,5 @@ for i in range(len(IMAGES)):
 
 
 cv2.destroyAllWindows()
+
+print("It's the end of the world")
