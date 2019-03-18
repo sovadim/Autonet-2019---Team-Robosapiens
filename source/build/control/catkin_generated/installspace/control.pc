@@ -1,0 +1,8 @@
+prefix=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/install
+
+Name: control
+Description: Description of control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/install/lib 
+Requires: 

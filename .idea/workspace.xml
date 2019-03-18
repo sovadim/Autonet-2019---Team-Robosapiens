@@ -2,34 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03181488-aaca-48cf-bfac-6ad635758360" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Ардуино.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Батарейка.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Вращающаяся болванка.SLDPRT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Второй этаж.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Камера1.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Камера2.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Камера3.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Колесо.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Корпус.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Малина.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Преобразователь.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Продолговатая деталь 2.SLDPRT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Робот.SLDASM" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/Серво.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на печать/Вращающаясяпиздота.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на печать/Сборка2.SLDASM" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на резку/All_cutting_details.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на резку/All_cutting_details.dwg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на резку/korpus.dwg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на резку/planka (1).dwg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на резку/planka.dwg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/детали на резку/vtoroy_etazh.dwg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projects/драйвер.sldprt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/separate_modules/auxiliary_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/auxiliary_functions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/separate_modules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/separate_modules/signs.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/signs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/separate_modules/vision_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/vision_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/Control/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/Control/catkin_generated/installspace/ControlConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/catkin_generated/installspace/ControlConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/Control/catkin_generated/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/catkin_generated/package.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/Control/catkin_generated/stamps/Control/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/catkin_generated/stamps/Control/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/devel/share/Control/cmake/ControlConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/devel/share/Control/cmake/ControlConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Control/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Control/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Control/Control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Control/Control.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/Control/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Control/package.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,12 +47,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2441" />
+          <entry key="py" value="2504" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2441" />
+          <entry key="Python" value="2504" />
         </counts>
       </usages-collector>
     </session>
@@ -74,13 +62,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="325">
+              <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#156#1480#0" />
                 <element signature="e#475#1717#0" />
                 <element signature="e#1745#3153#0" />
-                <marker date="1552946114396" expanded="true" signature="3997:4002" ph="..." />
+                <marker date="1552946971528" expanded="true" signature="4051:4056" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+            <state relative-caret-position="391">
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
               <folding>
                 <element signature="e#636#666#0" />
               </folding>
@@ -138,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/separate_modules/traffic_light.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="237">
-              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -404,7 +393,7 @@
     <entry file="file://$PROJECT_DIR$/separate_modules/traffic_light.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -413,8 +402,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="55" column="24" lean-forward="true" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+        <state relative-caret-position="391">
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
           <folding>
             <element signature="e#636#666#0" />
           </folding>
@@ -423,13 +412,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="325">
+          <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#156#1480#0" />
             <element signature="e#475#1717#0" />
             <element signature="e#1745#3153#0" />
-            <marker date="1552946114396" expanded="true" signature="3997:4002" ph="..." />
+            <marker date="1552946971528" expanded="true" signature="4051:4056" ph="..." />
           </folding>
         </state>
       </provider>

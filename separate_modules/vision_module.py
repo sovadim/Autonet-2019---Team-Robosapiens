@@ -37,7 +37,7 @@ def get_light(frame):
 
         area = cv2.contourArea(contours[0])
 
-        if red_sum > green_sum and area > s.LIGHT_ENOUGH_AREA:
+        if red_sum > green_sum and area > s.LIGHT_ENOUGH_AREA and (red_sum - green_sum) > s.LIGHT_ENOUGH_DIFFERENCE:
             RED = True
 
     #cv2.imshow('result', copy)
@@ -171,7 +171,7 @@ def run():
             continue
 
         # SIGN
-        #sign, sign_area, blocked = get_sign(frame1)
+        sign, sign_area, blocked = get_sign(frame1)
         #print(sign_area)
 
         #if sign_area > s.SIGN_ENOUGH_AREA:

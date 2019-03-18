@@ -8,7 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib:$LD_LIBRARY_PATH"
 export PWD="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src:$ROS_PACKAGE_PATH"
