@@ -1,12 +1,9 @@
 import cv2
-import numpy as np
-import time
 from separate_modules import settings as s
 from separate_modules import auxiliary_functions as aux
 
-
 def play_webcam():
-    cap = cv2.VideoCapture(s.LINE_FOLLOW_CAM_INDEX)
+    cap = cv2.VideoCapture(s.SIGN_CHECK_CAM_INDEX)
 
     while cap.isOpened():
         #print(cv2.CAP_PROP_FPS)
@@ -40,7 +37,7 @@ def play_webcam():
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
             roImg = frameCopy[y:y+h, x:x+w]
-            roImg = cv2.resize(roImg, (st.size, st.size))
+            roImg = cv2.resize(roImg, (s.size, s.size))
             roImg = cv2.inRange(roImg, (89, 124, 73), (255, 255, 255))
             #cv2.imshow('detected', roImg)
 

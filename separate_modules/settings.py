@@ -16,7 +16,7 @@ u_roi_cnstr = 250
 #
 
 LINE_FOLLOW_CAM_INDEX = 2
-SIGN_CHECK_CAM_INDEX = 1
+SIGN_CHECK_CAM_INDEX = 0
 
 # Mask
 #RED_BLUE_MASK = (150, 91, 90)
@@ -53,9 +53,9 @@ GREEN = cv2.imread('images/traffic_lights/green.jpg')
 IMAGES = [RED, GREEN]
 
 # TODO: calculate
-SIGN_ENOUGH_AREA = 1000
+SIGN_ENOUGH_AREA = 10000
 # TODO: calculate
-LIGHT_ENOUGH_AREA = 1000
+LIGHT_ENOUGH_AREA = 70000
 
 RED_LIGHT = True
 

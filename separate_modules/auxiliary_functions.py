@@ -5,10 +5,12 @@ from separate_modules import settings as s
 # LINES
 
 def canny(image):
-    gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY) # color to gray
-    blur = cv2.GaussianBlur(gray, (5, 5), 0)  # optional
-    canny = cv2.Canny(blur, 50, 150)  # gradient
-    return canny
+    #gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY) # color to gray
+    #blur = cv2.GaussianBlur(gray, (5, 5), 0)  # optional
+    #return cv2.Canny(blur, 50, 150)  # gradient
+
+    # optimize
+    return cv2.Canny(cv2.GaussianBlur(cv2.cvtColor(image, cv2.COLOR_RGB2GRAY), (5, 5), 0), 50, 150)
 
 def make_coordinates(image, line_parameters):
     slope, intercept = line_parameters
@@ -95,18 +97,6 @@ def find_similar(image):
             maxVal = COINCIDENCES[i]
             maxInd = i
 
-    if maxVal > s.ENTRY_THRESHOLD:
-        if maxInd == 0:
-            return 'SIGN_FORWARD'
-        elif maxInd == 1:
-            return 'SIGN_LEFT'
-        elif maxInd == 2:
-            return 'SIGN_RIGHT'
-        elif maxInd == 3:
-            return 'SIGN_FORWARD_AND_LEFT'
-        elif maxInd == 4:
-            return 'SIGN_FORWARD_AND_RIGHT'
-        elif maxInd == 5:
-            return 'SIGN_BLOCK'
+    return maxInd
 
     #print(COINCIDENCES)
