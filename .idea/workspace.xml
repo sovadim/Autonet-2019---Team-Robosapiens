@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="03181488-aaca-48cf-bfac-6ad635758360" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/separate_modules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/separate_modules/traffic_light.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/traffic_light.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/separate_modules/vision_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/vision_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/Control/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/Control/catkin_generated/installspace/ControlConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/catkin_generated/installspace/ControlConfig.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/Control/catkin_generated/package.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/catkin_generated/package.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/Control/catkin_generated/stamps/Control/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Control/catkin_generated/stamps/Control/package.xml.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/build/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/catkin_generated/setup_cached.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/devel/share/Control/cmake/ControlConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/devel/share/Control/cmake/ControlConfig.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Control/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Control/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Control/Control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Control/Control.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/Control/package.xml" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/Control/package.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +17,10 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
+          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.38" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,12 +35,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2504" />
+          <entry key="py" value="3246" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2504" />
+          <entry key="Python" value="3246" />
         </counts>
       </usages-collector>
     </session>
@@ -62,14 +50,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+            <state relative-caret-position="215">
+              <caret line="173" column="22" lean-forward="true" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <element signature="e#156#1480#0" />
-                <element signature="e#475#1717#0" />
-                <element signature="e#1745#3153#0" />
-                <marker date="1552946971528" expanded="true" signature="4051:4056" ph="..." />
+                <element signature="e#156#1262#0" />
+                <element signature="e#2562#3986#0" />
+                <marker date="1552995282485" expanded="true" signature="4816:4821" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/auxiliary_functions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
+            <state relative-caret-position="154">
               <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -90,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+            <state relative-caret-position="479">
+              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
               <folding>
                 <element signature="e#636#666#0" />
               </folding>
@@ -102,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/signs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-44">
               <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -114,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/lines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state relative-caret-position="1738">
               <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -126,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/traffic_light.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+            <state relative-caret-position="220">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -156,12 +143,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/separate_modules/hsv_mask.py" />
-        <option value="$PROJECT_DIR$/separate_modules/traffic_light.py" />
         <option value="$PROJECT_DIR$/separate_modules/lines.py" />
         <option value="$PROJECT_DIR$/separate_modules/signs.py" />
         <option value="$PROJECT_DIR$/separate_modules/auxiliary_functions.py" />
-        <option value="$PROJECT_DIR$/separate_modules/settings.py" />
+        <option value="$PROJECT_DIR$/separate_modules/traffic_light.py" />
         <option value="$PROJECT_DIR$/separate_modules/vision_module.py" />
+        <option value="$PROJECT_DIR$/separate_modules/settings.py" />
       </list>
     </option>
   </component>
@@ -360,19 +347,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/separate_modules/lines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/auxiliary_functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
+        <state relative-caret-position="154">
           <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -380,10 +357,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/separate_modules/signs.py">
+    <entry file="file://$PROJECT_DIR$/separate_modules/lines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        <state relative-caret-position="1738">
+          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -392,8 +369,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/traffic_light.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="220">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/separate_modules/signs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -402,8 +389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        <state relative-caret-position="479">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
           <folding>
             <element signature="e#636#666#0" />
           </folding>
@@ -412,14 +399,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="187" column="17" selection-start-line="187" selection-start-column="17" selection-end-line="187" selection-end-column="17" />
+        <state relative-caret-position="215">
+          <caret line="173" column="22" lean-forward="true" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <element signature="e#156#1480#0" />
-            <element signature="e#475#1717#0" />
-            <element signature="e#1745#3153#0" />
-            <marker date="1552946971528" expanded="true" signature="4051:4056" ph="..." />
+            <element signature="e#156#1262#0" />
+            <element signature="e#2562#3986#0" />
+            <marker date="1552995282485" expanded="true" signature="4816:4821" ph="..." />
           </folding>
         </state>
       </provider>

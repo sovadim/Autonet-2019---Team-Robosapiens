@@ -3,6 +3,39 @@ import numpy as np
 from separate_modules import settings as s
 from separate_modules import auxiliary_functions as aux
 
+# alignment buffers
+light_buff = [0] * s.ALIGNMENT_BUFF_SIZE
+sign_buff = [0] * s.ALIGNMENT_BUFF_SIZE
+
+def get_average(buff, val):
+    print(buff, val)
+
+    uniq_vals_buff = {}
+
+    # shift
+    for i in range(0, len(buff) - 1):
+        buff[i] = buff[i + 1]
+
+        if buff[i] in uniq_vals_buff.keys():
+            uniq_vals_buff[buff[i]] += 1
+        else:
+            uniq_vals_buff[buff[i]] = 1
+    buff[len(buff) - 1] = val
+
+    print(uniq_vals_buff)
+
+    # more frequent value search
+    result = 0
+    maxVal = 0
+
+    for key, val in uniq_vals_buff.items():
+        if val > maxVal:
+            maxVal = val
+            result = key
+
+    print(result)
+    return result
+
 def get_light(frame):
     # RED: True
     # Green: False
@@ -23,7 +56,7 @@ def get_light(frame):
 
         image = frame[y:y + h, x:x + w]
         image = cv2.resize(image, (50, 100))
-        #cv2.imshow('detected', image)
+        cv2.imshow('detected', image)
 
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
@@ -33,17 +66,18 @@ def get_light(frame):
         red_sum = np.sum(v[0:35, 0:30])
         green_sum = np.sum(v[45:80, 0:30])
 
-        #cv2.imshow('color', image)
+        cv2.imshow('color', image)
 
         area = cv2.contourArea(contours[0])
+        #print(area, red_sum - green_sum)
 
         if red_sum > green_sum and area > s.LIGHT_ENOUGH_AREA and (red_sum - green_sum) > s.LIGHT_ENOUGH_DIFFERENCE:
             RED = True
 
-    #cv2.imshow('result', copy)
+    cv2.imshow('result', copy)
     #print(RED, area)
 
-    return RED
+    return get_average(light_buff, RED)
 
 def get_sign(frame):
     # TODO: getting block sign
@@ -90,7 +124,7 @@ def get_sign(frame):
 
     cv2.imshow('result', frame)
 
-    return sign, area, blocked
+    return get_average(sign_buff, sign), area, blocked
 
 def get_lines(frame):
     # TODO: getting lines info
@@ -142,6 +176,7 @@ def send_message(light, sign=0, blocked=False, pos=0, angle=0):
     pass
 
 def run():
+
     cap_1 = cv2.VideoCapture(s.SIGN_CHECK_CAM_INDEX)
     #cap_2 = cv2.VideoCapture(s.LINE_FOLLOW_CAM_INDEX)
 
@@ -164,7 +199,7 @@ def run():
         #cv2.imshow('2', frame2)
 
         # TRAFFIC LIGHT
-        light = get_light(frame1)
+        #light = get_light(frame1)
 
         if light:
             send_message(light, 0, False, 0, 0)

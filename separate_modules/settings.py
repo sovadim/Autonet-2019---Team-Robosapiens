@@ -44,20 +44,14 @@ SIGN_BLOCK = cv2.inRange(SIGN_BLOCK, RED_BLUE_MASK, (255, 255, 255))
 # Number of similar pixels in matrix to conclude the sign is recognized
 ENTRY_THRESHOLD = 3000
 
-# TRAFFIC LIGHT
-
-#RED_GREEN = cv2.imread('images/traffic_lights/red_green.jpg')
-RED = cv2.imread('images/traffic_lights/red.jpg')
-GREEN = cv2.imread('images/traffic_lights/green.jpg')
-
-IMAGES = [RED, GREEN]
-
 # TODO: calculate
 SIGN_ENOUGH_AREA = 10000
 # TODO: calculate
-LIGHT_ENOUGH_AREA = 70000
-LIGHT_ENOUGH_DIFFERENCE = 20000
+LIGHT_ENOUGH_AREA = 60000
+# TODO: calculate
+LIGHT_ENOUGH_DIFFERENCE = 10000
 
-RED_LIGHT = True
+# alignment buffer size
+ALIGNMENT_BUFF_SIZE = 8
 
 ###################################################
