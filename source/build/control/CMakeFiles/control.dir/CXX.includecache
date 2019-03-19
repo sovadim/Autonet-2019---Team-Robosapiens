@@ -6,11 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/include/vision_info_msg/vision_info_msg.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/control.cpp
 ros/ros.h
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/ros/ros.h
 std_msgs/String.h
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/std_msgs/String.h
+vision_info_msg/vision_info_msg.h
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/vision_info_msg/vision_info_msg.h
 
 /opt/ros/kinetic/include/ros/advertise_options.h
 ros/forwards.h

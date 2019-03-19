@@ -11,5 +11,6 @@ export CMAKE_PREFIX_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/s
 export LD_LIBRARY_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build"
+export PYTHONPATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src:$ROS_PACKAGE_PATH"

@@ -330,7 +330,7 @@ gtest_force_shared_crt:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/kinetic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/kinetic/lib/librostime.so
 
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
@@ -364,6 +364,9 @@ std_msgs_DIR:PATH=/opt/ros/kinetic/share/std_msgs/cmake
 
 //Value Computed by CMake
 vision_info_msg_BINARY_DIR:STATIC=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_info_msg
+
+//The directory containing a CMake configuration file for vision_info_msg.
+vision_info_msg_DIR:PATH=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/share/vision_info_msg/cmake
 
 //Value Computed by CMake
 vision_info_msg_SOURCE_DIR:STATIC=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/vision_info_msg

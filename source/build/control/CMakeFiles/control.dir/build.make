@@ -98,8 +98,8 @@ control_EXTERNAL_OBJECTS =
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /opt/ros/kinetic/lib/libroscpp_serialization.so
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /opt/ros/kinetic/lib/librostime.so
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /opt/ros/kinetic/lib/libcpp_common.so
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/devel/lib/control/control: /usr/lib/x86_64-linux-gnu/libboost_system.so

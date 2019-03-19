@@ -1372,7 +1372,7 @@ vision_module/all:
 .PHONY : vision_module/all
 
 # Convenience name for "clean" pass in the directory.
-vision_module/clean: vision_module/CMakeFiles/_catkin_empty_exported_target.dir/clean
+vision_module/clean:
 
 .PHONY : vision_module/clean
 
@@ -1380,38 +1380,6 @@ vision_module/clean: vision_module/CMakeFiles/_catkin_empty_exported_target.dir/
 vision_module/preinstall:
 
 .PHONY : vision_module/preinstall
-
-#=============================================================================
-# Target rules for target vision_module/CMakeFiles/_catkin_empty_exported_target.dir
-
-# All Build rule for target.
-vision_module/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f vision_module/CMakeFiles/_catkin_empty_exported_target.dir/build.make vision_module/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f vision_module/CMakeFiles/_catkin_empty_exported_target.dir/build.make vision_module/CMakeFiles/_catkin_empty_exported_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : vision_module/CMakeFiles/_catkin_empty_exported_target.dir/all
-
-# Build rule for subdir invocation for target.
-vision_module/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 vision_module/CMakeFiles/_catkin_empty_exported_target.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/CMakeFiles 0
-.PHONY : vision_module/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: vision_module/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-.PHONY : _catkin_empty_exported_target
-
-# clean rule for target.
-vision_module/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f vision_module/CMakeFiles/_catkin_empty_exported_target.dir/build.make vision_module/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : vision_module/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-# clean rule for target.
-clean: vision_module/CMakeFiles/_catkin_empty_exported_target.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

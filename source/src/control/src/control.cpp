@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "vision_info_msg/vision_info_msg.h"
 
 /// current_sign is mark of current
 /// running road sign
@@ -28,16 +29,16 @@ void calculate_rotation(bool right) {
   // TODO: rotation logic
 }
 
-void run(const std_msgs::String::ConstPtr& msg) {
+void run(const vision_info_msg::vision_info_msg &msg) {
 
-  ROS_INFO("I heard: [%s]", msg->data.c_str());
+  ROS_INFO("I heard: [%d], [%i], [%d], [%i], [%i]", msg.light, msg.sign, msg.blocked, msg.pos, msg.shift);
 
   // TODO: read message
-  bool red_light = false;
-  int sign = 0;
-  bool blocked = false;
-  int pos = 0;
-  int shift = 0;
+  bool red_light = msg.light;
+  int sign = msg.sign;
+  bool blocked = msg.blocked;
+  int pos = msg.pos;
+  int shift = msg.shift;
 
   if (red_light) {
     // TODO: stop-message
@@ -93,9 +94,7 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "listener");
   ros::NodeHandle n;
 
-  if (true){
-    ROS_INFO("TRUE");
-  }
+  ROS_INFO("START LOGIC");
 
   ros::Subscriber sub = n.subscribe("vision_info", 10, run);
 
