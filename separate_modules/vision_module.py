@@ -202,6 +202,9 @@ def get_lines(frame):
 
     cv2.imshow('cropped', cropped_image)
 
+    line_center_x = line_center_x * 100 // s.im_width
+    line_shift = line_shift * 100 // s.im_width
+
     print(line_center_x, line_shift)
 
     return line_center_x, line_shift
