@@ -118,6 +118,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/gtest/cmake_install.cmake")
   include("/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/control/cmake_install.cmake")
+  include("/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/cmake_install.cmake")
 
 endif()
 

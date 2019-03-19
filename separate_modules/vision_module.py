@@ -187,6 +187,7 @@ def run():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
+
     cap_1.release()
     #cap_2.release()
 

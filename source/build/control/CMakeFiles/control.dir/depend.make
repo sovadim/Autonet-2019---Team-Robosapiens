@@ -20,6 +20,7 @@ control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/m
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/message.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/message_event.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/message_forward.h
+control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/message_operations.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/message_traits.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/names.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/node_handle.h
@@ -57,6 +58,7 @@ control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/t
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

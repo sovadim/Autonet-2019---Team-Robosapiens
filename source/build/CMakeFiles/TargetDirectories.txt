@@ -51,3 +51,11 @@
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/control/CMakeFiles/install/strip.dir
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/control/CMakeFiles/install/local.dir
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/control/CMakeFiles/install.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/rebuild_cache.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/edit_cache.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/list_install_components.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/install.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/_catkin_empty_exported_target.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/install/local.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/install/strip.dir
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/build/vision_module/CMakeFiles/test.dir

@@ -21,6 +21,7 @@ control/CMakeFiles/control.dir/src/control.cpp.o
  /opt/ros/kinetic/include/ros/message.h
  /opt/ros/kinetic/include/ros/message_event.h
  /opt/ros/kinetic/include/ros/message_forward.h
+ /opt/ros/kinetic/include/ros/message_operations.h
  /opt/ros/kinetic/include/ros/message_traits.h
  /opt/ros/kinetic/include/ros/names.h
  /opt/ros/kinetic/include/ros/node_handle.h
@@ -58,5 +59,6 @@ control/CMakeFiles/control.dir/src/control.cpp.o
  /opt/ros/kinetic/include/ros/wall_timer.h
  /opt/ros/kinetic/include/ros/wall_timer_options.h
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
+ /opt/ros/kinetic/include/std_msgs/String.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
