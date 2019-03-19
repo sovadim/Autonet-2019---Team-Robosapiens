@@ -22,6 +22,12 @@ SIGN_CHECK_CAM_INDEX = 0
 #RED_BLUE_MASK = (150, 91, 90)
 RED_BLUE_MASK = (89, 124, 73)
 
+BLUE_MASK_D = (89, 124, 73)
+BLUE_MASK_U = (255, 255, 255)
+
+Red_MASK_D = (0, 0, 60)
+Red_MASK_U = (119, 86, 180)
+
 # Sample images for comparison
 # The larger the picture the more accurate the result
 # but the lower the processing speed

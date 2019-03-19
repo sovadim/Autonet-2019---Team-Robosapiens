@@ -5,7 +5,7 @@ import cv2
 def do_nothing(x):
     pass
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 cv2.namedWindow('mask')
 

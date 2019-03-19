@@ -99,30 +99,19 @@ def get_light(frame):
     return get_frequent(light_buff, RED)
 
 def get_sign(frame):
-    # TODO: getting block sign
     sign = 0
     area = 0
     blocked = True
 
-    frameCopy = frame.copy()
+    #frameCopy = frame.copy()
 
-    # hsv
-    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-
-    # avoiding of color noises
-    hsv = cv2.blur(hsv, (5, 5))
-
-    # mask
-    mask = cv2.inRange(hsv, s.RED_BLUE_MASK, (255, 255, 255))
-
-    # minus noises
-    mask = cv2.erode(mask, None, iterations=2)
-    mask = cv2.dilate(mask, None, iterations=4)
+    mask = cv2.inRange(frame, s.RED_BLUE_MASK, (255, 255, 255))
+    #cv2.imshow('mask2', mask2)
 
     # contours searching
     contours = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
     contours = contours[0]
-    # cv2.imshow('mask', mask)
+
     if contours:
         contours = sorted(contours, key=cv2.contourArea, reverse=True)
         cv2.drawContours(frame, contours, 0, (255, 0, 255), 5)
@@ -130,20 +119,22 @@ def get_sign(frame):
         (x, y, w, h) = cv2.boundingRect(contours[0])
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-        roImg = frameCopy[y:y + h, x:x + w]
+        roImg = frame[y:y + h, x:x + w]
         roImg = cv2.resize(roImg, (s.size, s.size))
-        roImg = cv2.inRange(roImg, (89, 124, 73), (255, 255, 255))
+        roImg = cv2.inRange(roImg, s.RED_BLUE_MASK, (255, 255, 255))
         #cv2.imshow('detected', roImg)
 
         sign = aux.find_similar(roImg)
-        # TODO: check
         area = cv2.contourArea(contours[0])
-
-        # TODO: block
 
     cv2.imshow('result', frame)
 
-    return get_frequent(sign_buff, sign), area, blocked
+    sign = get_frequent(sign_buff, sign)
+
+    if sign == 5:
+        blocked = True
+
+    return sign, area, blocked
 
 def get_lines(frame):
 
@@ -194,13 +185,13 @@ def get_lines(frame):
         line_shift = line_center_x - line_shift
         line_center_x -= s.im_width//2
 
-        cv2.imshow('result', combo_image)
+        cv2.imshow('result_lines', combo_image)
     except:
-        cv2.imshow('result', frame)
+        cv2.imshow('result_lines', frame)
         line_center_x = get_average(center_line_buff, 0)
         line_shift = get_average(shift_line_buff, 0)
 
-    cv2.imshow('cropped', cropped_image)
+    #cv2.imshow('cropped', cropped_image)
 
     line_center_x = line_center_x * 100 // s.im_width
     line_shift = line_shift * 100 // s.im_width
@@ -221,7 +212,6 @@ def run():
 
     while True:
 
-        # TODO: delete
         light = False
         light_area = 0
         sign = 0
@@ -245,7 +235,7 @@ def run():
             continue
 
         # SIGN
-        #sign, sign_area, blocked = get_sign(frame1)
+        sign, sign_area, blocked = get_sign(frame1.copy())
 
         #if sign_area > s.SIGN_ENOUGH_AREA:
         #    send_message(light, sign, blocked)
