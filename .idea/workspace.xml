@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03181488-aaca-48cf-bfac-6ad635758360" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/separate_modules/vision_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/vision_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/vision_module/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/vision_module/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/vision_module/src/vision_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/vision_module/src/vision_module.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,11 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="200" column="49" lean-forward="true" selection-start-line="200" selection-start-column="49" selection-end-line="200" selection-end-column="49" />
+            <state relative-caret-position="176">
+              <caret line="194" column="38" selection-start-line="194" selection-start-column="38" selection-end-line="194" selection-end-column="38" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <marker date="1553025590517" expanded="true" signature="398:594" ph="..." />
@@ -96,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/separate_modules/lines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1738">
-              <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+            <state relative-caret-position="457">
+              <caret line="105" column="17" lean-forward="true" selection-start-line="104" selection-start-column="8" selection-end-line="105" selection-end-column="17" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -347,8 +350,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="200" column="49" lean-forward="true" selection-start-line="200" selection-start-column="49" selection-end-line="200" selection-end-column="49" />
+        <state relative-caret-position="176">
+          <caret line="194" column="38" selection-start-line="194" selection-start-column="38" selection-end-line="194" selection-end-column="38" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <marker date="1553025590517" expanded="true" signature="398:594" ph="..." />
@@ -387,20 +390,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/separate_modules/lines.py">
+    <entry file="file://$PROJECT_DIR$/separate_modules/traffic_light.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1738">
-          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+        <state relative-caret-position="176">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/separate_modules/traffic_light.py">
+    <entry file="file://$PROJECT_DIR$/separate_modules/lines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="457">
+          <caret line="105" column="17" lean-forward="true" selection-start-line="104" selection-start-column="8" selection-end-line="105" selection-end-column="17" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
