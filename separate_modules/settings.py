@@ -53,5 +53,6 @@ LIGHT_ENOUGH_DIFFERENCE = 10000
 
 # alignment buffer size
 ALIGNMENT_BUFF_SIZE = 8
+LINES_ALIGNMENT_BUFF_SIZE = 10
 
 ###################################################

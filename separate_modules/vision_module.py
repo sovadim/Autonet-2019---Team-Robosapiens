@@ -6,9 +6,28 @@ from separate_modules import auxiliary_functions as aux
 # alignment buffers
 light_buff = [0] * s.ALIGNMENT_BUFF_SIZE
 sign_buff = [0] * s.ALIGNMENT_BUFF_SIZE
+center_line_buff = [0] * s.LINES_ALIGNMENT_BUFF_SIZE
+shift_line_buff = [0] * s.LINES_ALIGNMENT_BUFF_SIZE
+
+line_center_x = 0
+line_shift = 0
 
 def get_average(buff, val):
-    print(buff, val)
+
+    summ = 0
+
+    # shift
+    for i in range(0, len(buff) - 1):
+        buff[i] = buff[i + 1]
+        summ += buff[i]
+
+    buff[len(buff) - 1] = val
+    summ += val
+
+    return summ//len(buff)
+
+def get_frequent(buff, val):
+    #print(buff, val)
 
     uniq_vals_buff = {}
 
@@ -22,7 +41,7 @@ def get_average(buff, val):
             uniq_vals_buff[buff[i]] = 1
     buff[len(buff) - 1] = val
 
-    print(uniq_vals_buff)
+    #print(uniq_vals_buff)
 
     # more frequent value search
     result = 0
@@ -33,7 +52,7 @@ def get_average(buff, val):
             maxVal = val
             result = key
 
-    print(result)
+    #print(result)
     return result
 
 def get_light(frame):
@@ -77,7 +96,7 @@ def get_light(frame):
     cv2.imshow('result', copy)
     #print(RED, area)
 
-    return get_average(light_buff, RED)
+    return get_frequent(light_buff, RED)
 
 def get_sign(frame):
     # TODO: getting block sign
@@ -124,19 +143,13 @@ def get_sign(frame):
 
     cv2.imshow('result', frame)
 
-    return get_average(sign_buff, sign), area, blocked
+    return get_frequent(sign_buff, sign), area, blocked
 
 def get_lines(frame):
-    # TODO: getting lines info
-    # TODO: align lines in additional function
-    pos = 0
-    angle = 0
 
-    # canny transform to prepare for detection
-    canny_image = aux.canny(frame)
-
-    # area of frame where lines are supposed to be
-    cropped_image = aux.region_of_interest(canny_image)
+    # canny transform and getting roi
+    # we don't need to make frame copy at this step
+    cropped_image = aux.region_of_interest(aux.canny(frame))
 
     # getting lines
 
@@ -158,17 +171,40 @@ def get_lines(frame):
                             maxLineGap)
 
     try:
+        # average_lines: [left_line, right_line]
+        # line: [x1, y1, x2, y2]
         averaged_lines = aux.average_slope_intercept(frame, lines)
+
         line_image = aux.display_lines(frame, averaged_lines)
         combo_image = cv2.addWeighted(frame, 0.8, line_image, 1, 1)
-        #cv2.imshow('result', combo_image)
+
+        # getting center line
+        #cv2.rectangle(combo_image, (averaged_lines[0][0], 0), (averaged_lines[1][0], s.im_height), (255, 0, 255), 5)
+        line_center_x = get_average(center_line_buff, averaged_lines[0][0] + (averaged_lines[1][0] - averaged_lines[0][0])//2)
+
+        cv2.rectangle(combo_image, (line_center_x - 2, 0), (line_center_x + 2, s.im_height), (255, 255, 0), 5)
+
+        # getting shift from forward direction
+        #cv2.rectangle(combo_image, (x2_l, 0), (x2_r, s.im_height), (255, 0, 0), 5)
+        line_shift = get_average(shift_line_buff, averaged_lines[0][2] + (averaged_lines[1][2] - averaged_lines[0][2]) // 2)
+
+        cv2.rectangle(combo_image, (line_shift - 2, 0), (line_shift + 2, s.im_height), (0, 255, 255), 5)
+
+        # end data
+        line_shift = line_center_x - line_shift
+        line_center_x -= s.im_width//2
+
+        cv2.imshow('result', combo_image)
     except:
-        #cv2.imshow('result', frame)
-        pass
+        cv2.imshow('result', frame)
+        line_center_x = get_average(center_line_buff, 0)
+        line_shift = get_average(shift_line_buff, 0)
 
-    #cv2.imshow('cropped', cropped_image)
+    cv2.imshow('cropped', cropped_image)
 
-    return pos, angle
+    print(line_center_x, line_shift)
+
+    return line_center_x, line_shift
 
 def send_message(light, sign=0, blocked=False, pos=0, angle=0):
     #print('msg: [', light, ',', sign, ',', blocked, ',', pos, ',', angle, ']')
@@ -206,15 +242,14 @@ def run():
             continue
 
         # SIGN
-        sign, sign_area, blocked = get_sign(frame1)
-        #print(sign_area)
+        #sign, sign_area, blocked = get_sign(frame1)
 
         #if sign_area > s.SIGN_ENOUGH_AREA:
         #    send_message(light, sign, blocked)
         #    continue
 
         # LINES
-        #pos, angle = get_lines(frame1) # TODO: frame2
+        pos, angle = get_lines(frame1) # TODO: frame2
 
         # MESSAGE
         send_message(light, sign, blocked, pos, angle)
