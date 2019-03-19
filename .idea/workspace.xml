@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03181488-aaca-48cf-bfac-6ad635758360" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/separate_modules/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/separate_modules/vision_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_modules/vision_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/vision_module/src/images/traffic_lights/green.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/vision_module/src/images/traffic_lights/red.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/src/vision_module/src/images/traffic_lights/red_green.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/build/control/CMakeFiles/control.dir/src/control.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/source/build/control/CMakeFiles/control.dir/src/control.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/devel/lib/control/control" beforeDir="false" afterPath="$PROJECT_DIR$/source/devel/lib/control/control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/src/control/src/control.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/src/control/src/control.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +17,7 @@
     <session id="-766641521">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.38" value="1" />
@@ -54,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="198" column="35" lean-forward="true" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
+            <state relative-caret-position="340">
+              <caret line="248" column="7" selection-start-line="248" selection-start-column="7" selection-end-line="248" selection-end-column="7" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
                 <element signature="e#405#593#0" />
@@ -323,14 +321,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-11" width="1865" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3294979" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -407,8 +404,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/separate_modules/vision_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="198" column="35" lean-forward="true" selection-start-line="198" selection-start-column="35" selection-end-line="198" selection-end-column="35" />
+        <state relative-caret-position="340">
+          <caret line="248" column="7" selection-start-line="248" selection-start-column="7" selection-end-line="248" selection-end-column="7" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <element signature="e#405#593#0" />
