@@ -1,0 +1,8 @@
+prefix=/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/install
+
+Name: vision_info_msg
+Description: Description of vision_info_msg
+Version: 0.0.0
+Cflags: -I/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/install/include
+Libs: -L/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/install/lib 
+Requires: message_runtime
