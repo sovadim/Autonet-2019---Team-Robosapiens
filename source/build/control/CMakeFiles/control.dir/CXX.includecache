@@ -25,8 +25,10 @@ ros/message_operations.h
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/control.cpp
 ros/ros.h
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/ros/ros.h
-std_msgs/String.h
-/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/std_msgs/String.h
+std_msgs/Bool.h
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/std_msgs/Bool.h
+std_msgs/Int32.h
+/home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/std_msgs/Int32.h
 vision_info_msg/vision_info_msg.h
 /home/vadim/Projects/Autonet-2019---Team-Robosapiens/source/src/control/src/vision_info_msg/vision_info_msg.h
 
@@ -676,7 +678,23 @@ ros/forwards.h
 
 /opt/ros/kinetic/include/rosconsole/macros_generated.h
 
-/opt/ros/kinetic/include/std_msgs/String.h
+/opt/ros/kinetic/include/std_msgs/Bool.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
+/opt/ros/kinetic/include/std_msgs/Int32.h
 string
 -
 vector

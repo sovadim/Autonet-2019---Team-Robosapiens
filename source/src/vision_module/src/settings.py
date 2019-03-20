@@ -15,10 +15,10 @@ l_roi_x = 0                     # X _|____ left  roi border
 r_roi_x = im_width - l_roi_x    # X ____|_ right roi border
 d_roi_y = im_height - 50        # Y ______ lower roi border
 u_roi_y = 80                    # Y ------ upper roi border
-u_roi_cnstr = 250
+u_roi_cnstr = 50
 #
 
-LINE_FOLLOW_CAM_INDEX = 2
+LINE_FOLLOW_CAM_INDEX = 1
 SIGN_CHECK_CAM_INDEX = 0
 
 # Mask
@@ -51,7 +51,7 @@ SIGN_FORWARD_AND_RIGHT = cv2.inRange(SIGN_FORWARD_AND_RIGHT, RED_BLUE_MASK, (255
 SIGN_BLOCK = cv2.inRange(SIGN_BLOCK, RED_BLUE_MASK, (255, 255, 255))
 
 # Number of similar pixels in matrix to conclude the sign is recognized
-ENTRY_THRESHOLD = 3000
+ENTRY_THRESHOLD = 3500
 
 # TODO: calculate
 SIGN_ENOUGH_AREA = 10000

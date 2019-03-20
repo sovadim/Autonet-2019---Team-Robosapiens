@@ -131,7 +131,7 @@ def get_sign(frame):
 
         #area = cv2.contourArea(contours[0])
 
-    cv2.imshow('result_sign', frame)
+    #cv2.imshow('result_sign', frame)
 
     sign = get_frequent(sign_buff, sign)
 
@@ -145,7 +145,7 @@ def get_lines(frame):
     # canny transform and getting roi
     # we don't need to make frame copy at this step
     cropped_image = aux.region_of_interest(aux.canny(frame))
-
+    cv2.imshow('cropped', cropped_image)
     # getting lines
 
     # required accuracy settings

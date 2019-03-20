@@ -59,7 +59,8 @@ control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/t
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
-control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/std_msgs/String.h
+control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/std_msgs/Bool.h
+control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/std_msgs/Int32.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 control/CMakeFiles/control.dir/src/control.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 

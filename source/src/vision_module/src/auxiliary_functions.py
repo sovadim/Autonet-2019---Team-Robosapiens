@@ -7,7 +7,7 @@ import settings as s
 
 ########################################################################
 def canny(image):
-    return cv2.Canny(cv2.GaussianBlur(cv2.cvtColor(image, cv2.COLOR_RGB2GRAY), (5, 5), 0), 50, 150)
+    return cv2.Canny(cv2.GaussianBlur(cv2.cvtColor(image, cv2.COLOR_RGB2GRAY), (5, 5), 0), 5, 100)
 ########################################################################
 def make_coordinates(image, line_parameters):
     slope, intercept = line_parameters
