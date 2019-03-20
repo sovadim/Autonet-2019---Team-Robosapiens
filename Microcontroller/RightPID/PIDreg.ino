@@ -1,6 +1,8 @@
-
+#include <ros.h>
+#include <std_msgs/Int32.h>
 #include <Encoder.h>
 #include <Servo.h>
+#include <Ultrasonic.h>
 
 /* Эта программа основаня на программе тестирования энкодеров. Здесь же проводится расчет
     скоростей вращения колес. Каждые ~ 20 миллисекунд вызываются функции рассчета скоростей
@@ -39,10 +41,17 @@
 #define DIAMETER 67
 #define TICKVALUE 390.1
 
+#define TRIG_PIN 33 
+#define ECHO_PIN 32
+
+typedef ros::NodeHandle_<ArduinoHardware, 5, 5, 200, 200, ros::FlashReadOutBuffer_> NodeHandleCompact;
+NodeHandleCompact nh;
+
 Servo servo1;
 
+Ultrasonic ultrasonic(TRIG_PIN,ECHO_PIN);
 
-int reqvel = 500;  //Put into the ROS
+int reqvel;  //Put into the ROS 450
 int error, analogchange;
 int nlerrorold = 0;
 int nrerrorold = 0;
@@ -59,22 +68,35 @@ int nltickes, nrtickes, tltickes, trtickes;
 int NLvel, NRvel, TLvel, TRvel;  //скорости колес
 long timer;
 int delta;  //дельта времени замера
+int get_rotate;
 
-void NLvelcalc();
-void NRvelcalc();
-void TLvelcalc();
-void TRvelcalc();
-void NLGinterruptFunc();
-void NRGinterruptFunc();
-void TLGinterruptFunc();
-void TRGinterruptFunc();
-void NLmove( int speed);
-void NRmove( int speed);
-void TLmove( int speed);
-void TRmove( int speed);
+int dir; // направление движения : 1 - вперед, 2 - назад, 3 - разворот по часовой, 4 - разворот против часовой, 5 - стоп
+ 
+void chatterCallback(const std_msgs::Int32& msg1)
+{
+  dir = msg1.data;
+}
+
+ros::Subscriber<std_msgs::Int32> sub1("move", chatterCallback); 
+
+void chatterCallback2(const std_msgs::Int32& msgangle)
+{
+  get_rotate = msgangle.data;
+}
+
+ros::Subscriber<std_msgs::Int32> sub2("rotate", chatterCallback2 );
+
+std_msgs::Int32 msgdist;
+ros::Publisher chatter_pub("dist", &msgdist);
+
 
 void setup() {
-  Serial.begin(9600);
+
+  nh.initNode();
+  nh.subscribe(sub1);
+  nh.subscribe(sub2);
+  nh.advertise(chatter_pub);
+  //Serial.begin(9600);
   pinMode(NLENC, INPUT);
   pinMode(NRENC, INPUT);
   pinMode(TLENC, INPUT);
@@ -84,9 +106,11 @@ void setup() {
   pinMode(NLCCW, OUTPUT);
   pinMode(NRCW, OUTPUT);
   pinMode(NRCCW, OUTPUT);
+
+  
   servo1.attach(CATH_PIN);
 
-   Serial.println("---------------------------------------");
+   //Serial.println("---------------------------------------");
   attachInterrupt(digitalPinToInterrupt(NLENC), NLinterruptFunc, FALLING);
   attachInterrupt(digitalPinToInterrupt(NRENC), NRinterruptFunc, FALLING);
   attachInterrupt(digitalPinToInterrupt(TLENC), TLinterruptFunc, FALLING);
@@ -101,9 +125,7 @@ void setup() {
 }
 
 void loop() {
-
-  
-
+  reqvel = dir;
   //замеряем дельту времени каждую итерацию цикла. Если она будет >= 20 миллисекунд, то
   if ((delta = millis() - timer) >= 20)
   {
@@ -135,11 +157,14 @@ void loop() {
     TRmove(analogchange);
     timer = millis();
   }
-  sprintf(buf, "NOSE :Left wheel: %d; Right: %d  TAIL :Left wheel: %d; Right: %d", (int)NLvel, (int)NRvel, (int)TLvel, (int)TRvel);
-  Serial.println(buf);
-  servo1.write(119);
+ // sprintf(buf, "NOSE :Left wheel: %d; Right: %d  TAIL :Left wheel: %d; Right: %d", (int)NLvel, (int)NRvel, (int)TLvel, (int)TRvel);
+//  Serial.println(buf);
+  servo1.write(104 + get_rotate);  //104 - magic numbers
   //sprintf(buf, "NOSE :Left wheel: %d; Right: %d  TAIL :Left wheel: %d; Right: %d", (int)(deriv * DNL), (int)(deriv * DNR), (int)(deriv * DTL), (int)(deriv * DTR));
   //Serial.println(buf);
+  msgdist.data = ultrasonic.distanceRead();
+  chatter_pub.publish(&msgdist);
+  nh.spinOnce();
 }
 
 //---------------------------------Функции расчета реальных скоростей
@@ -252,7 +277,5 @@ void TRmove( int speed)
     speed = -speed; 
     analogWrite(TRCW, speed);
     digitalWrite(TRCCW, LOW);
-    analogWrite(TRCCW, speed);
-    digitalWrite(TRCW, LOW);
   }
 }
