@@ -60,7 +60,7 @@ def get_light(frame):
     # Green: False
     RED = False
 
-    # canny + canny
+    # copy + canny
     copy = aux.canny(frame.copy())
 
     # contours searching
@@ -101,7 +101,7 @@ def get_light(frame):
 def get_sign(frame):
     sign = 0
     area = 0
-    blocked = True
+    blocked = False
 
     #frameCopy = frame.copy()
 
@@ -109,8 +109,7 @@ def get_sign(frame):
     #cv2.imshow('mask2', mask2)
 
     # contours searching
-    contours = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-    contours = contours[0]
+    contours = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)[0]
 
     if contours:
         contours = sorted(contours, key=cv2.contourArea, reverse=True)
@@ -202,7 +201,6 @@ def get_lines(frame):
 
 def send_message(light, sign=0, blocked=False, pos=0, angle=0):
     #print('msg: [', light, ',', sign, ',', blocked, ',', pos, ',', angle, ']')
-    # TODO: creating and sending message
     pass
 
 def run():
@@ -242,10 +240,10 @@ def run():
         #    continue
 
         # LINES
-        pos, angle = get_lines(frame1) # TODO: frame2
+        line_center_x, line_shift = get_lines(frame1) # TODO: frame2
 
         # MESSAGE
-        send_message(light, sign, blocked, pos, angle)
+        send_message(light, sign, blocked, line_center_x, line_shift)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
