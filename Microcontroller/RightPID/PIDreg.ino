@@ -1,55 +1,57 @@
-<<<<<<< HEAD
+#include <ros.h>
+#include <std_msgs/Int32.h>
 #include <Encoder.h>
+#include <Servo.h>
+#include <Ultrasonic.h>
 
-=======
->>>>>>> fd8439e0f376de4dae51afea5e9e03671d78705b
 /* Эта программа основаня на программе тестирования энкодеров. Здесь же проводится расчет
     скоростей вращения колес. Каждые ~ 20 миллисекунд вызываются функции рассчета скоростей
     для каждого колеса. Сами функции рассчета скоростей оперируют значениями тиков, которые
     все время рассчитываются в прерываниях независимо от главного цикла.
 */
 #include <PinChangeInt.h>
-<<<<<<< HEAD
 //считывающие пины для энкодеров
-#define NRENCY 19  //N - nose, L - left, Y -yellow
-#define NRENCG 28  //G - green
-#define NLENCY 18  //R - right
-#define NLENCG 26
-//#define TLENCY 20  //T - tail
-//#define TLENCG 30
-//#define TRENCY 21
-//#define TRENCG 32
-Encoder encNL(NLENCY,NLENCG);
-Encoder encNR(NRENCY,NRENCG);
-#define NLCW 6 
-#define NLCCW 7
-#define NRCW 2
-#define NRCCW 3
+#define NRENC 19  //N - nose, L - left, Y -yellow  //G - green
+#define NLENC 18  //R - right  //T - tail
+#define TLENC 21
+#define TRENC 20
+
+#define CATH_PIN 46
+
+#define NLCW 7 
+#define NLCCW 6
+#define NRCW 3
+#define NRCCW 2
 
 
-#define TLCCW 11
-#define TLCW 12
-#define TRCCW 10
-#define TRCW 9
+#define TLCCW 12
+#define TLCW 11
+#define TRCCW 9
+#define TRCW 10
 
 
-#define PNL 0.45
-#define INL 0
-#define DNL 0
-#define PNR 0
-#define INR 0
-#define DNR 0
-#define PTL 0
-#define ITL 0
-#define DTL 0
-#define PTR 0
-#define ITR 0
-#define DTR 0
+#define PNL 0.3
+#define INL 0.3
+#define PNR 0.3
+#define INR 0.3
+#define PTL 0.3
+#define ITL 0.3
+#define PTR 0.3
+#define ITR 0.3
 #define DIAMETER 67
-#define TICKVALUE 1
+#define TICKVALUE 390.1
 
+#define TRIG_PIN 33 
+#define ECHO_PIN 32
 
-int reqvel = 256;  //Put into the ROS
+typedef ros::NodeHandle_<ArduinoHardware, 5, 5, 200, 200, ros::FlashReadOutBuffer_> NodeHandleCompact;
+NodeHandleCompact nh;
+
+Servo servo1;
+
+Ultrasonic ultrasonic(TRIG_PIN,ECHO_PIN);
+
+int reqvel;  //Put into the ROS 450
 int error, analogchange;
 int nlerrorold = 0;
 int nrerrorold = 0;
@@ -66,113 +68,103 @@ int nltickes, nrtickes, tltickes, trtickes;
 int NLvel, NRvel, TLvel, TRvel;  //скорости колес
 long timer;
 int delta;  //дельта времени замера
-void NLvelcalc();
-void NRvelcalc();
-void TLvelcalc();
-void TRvelcalc();
-void NLGinterruptFunc();
-void NRGinterruptFunc();
-void TLGinterruptFunc();
-void TRGinterruptFunc();
-void NLmove( int speed);
-void NRmove( int speed);
-void TLmove( int speed);
-void TRmove( int speed);
+int get_rotate;
 
+int dir; // направление движения : 1 - вперед, 2 - назад, 3 - разворот по часовой, 4 - разворот против часовой, 5 - стоп
+ 
+void chatterCallback(const std_msgs::Int32& msg1)
+{
+  dir = msg1.data;
+}
 
->>>>>>> fd8439e0f376de4dae51afea5e9e03671d78705b
+ros::Subscriber<std_msgs::Int32> sub1("move", chatterCallback); 
+
+void chatterCallback2(const std_msgs::Int32& msgangle)
+{
+  get_rotate = msgangle.data;
+}
+
+ros::Subscriber<std_msgs::Int32> sub2("rotate", chatterCallback2 );
+
+std_msgs::Int32 msgdist;
+ros::Publisher chatter_pub("dist", &msgdist);
+
 
 void setup() {
-  Serial.begin(9600);
 
-<<<<<<< HEAD
-  pinMode(NLENCY, INPUT);
-  pinMode(NLENCG, INPUT);
-  pinMode(NRENCY, INPUT);
-  pinMode(NRENCG, INPUT);
-//  pinMode(TLENCY, INPUT);
-//  pinMode(TLENCG, INPUT);
-//  pinMode(TRENCY, INPUT);
-//  pinMode(TRENCG, INPUT);
-
+  nh.initNode();
+  nh.subscribe(sub1);
+  nh.subscribe(sub2);
+  nh.advertise(chatter_pub);
+  //Serial.begin(9600);
+  pinMode(NLENC, INPUT);
+  pinMode(NRENC, INPUT);
+  pinMode(TLENC, INPUT);
+  pinMode(TRENC, INPUT);
  
   pinMode(NLCW, OUTPUT);
   pinMode(NLCCW, OUTPUT);
   pinMode(NRCW, OUTPUT);
   pinMode(NRCCW, OUTPUT);
 
-  pinMode(TLCW, OUTPUT);
-  pinMode(TLCCW, OUTPUT);
-  pinMode(TRCW, OUTPUT);
-  pinMode(TRCCW, OUTPUT);
+  
+  servo1.attach(CATH_PIN);
 
-
-
-  Serial.println("---------------------------------------");
-//  attachInterrupt(digitalPinToInterrupt(NLENCG), NLGinterruptFunc, FALLING);
-  attachInterrupt(NLENCY, NLYinterruptFunc, FALLING);
-//  attachInterrupt(digitalPinToInterrupt(NRENCY), NRYinterruptFunc, FALLING);
-  attachInterrupt(NRENCG, NRGinterruptFunc, FALLING);
-//  attachInterrupt(digitalPinToInterrupt(TLENCY), TLYinterruptFunc, FALLING);
-//  attachInterrupt(digitalPinToInterrupt(TLENCG), TLGinterruptFunc, FALLING);
-//  attachInterrupt(digitalPinToInterrupt(TRENCY), TLYinterruptFunc, FALLING);
-//  attachInterrupt(digitalPinToInterrupt(TRENCG), TLGinterruptFunc, FALLING);
+   //Serial.println("---------------------------------------");
+  attachInterrupt(digitalPinToInterrupt(NLENC), NLinterruptFunc, FALLING);
+  attachInterrupt(digitalPinToInterrupt(NRENC), NRinterruptFunc, FALLING);
+  attachInterrupt(digitalPinToInterrupt(TLENC), TLinterruptFunc, FALLING);
+  attachInterrupt(digitalPinToInterrupt(TRENC), TRinterruptFunc, FALLING);
   
   nltickes = 0;
   nrtickes = 0;
   tltickes = 0;
   trtickes = 0;
 
->>>>>>> fd8439e0f376de4dae51afea5e9e03671d78705b
   timer = millis(); //начальный момент времени
 }
 
 void loop() {
-<<<<<<< HEAD
-  
-
+  reqvel = dir;
   //замеряем дельту времени каждую итерацию цикла. Если она будет >= 20 миллисекунд, то
-  if ((delta = millis() - timer) >= 30)
+  if ((delta = millis() - timer) >= 20)
   {
 //-------------------------------функции задания скоростей
 //-----------------------------------------------------------------------------NL
     NLvelcalc();
     error = reqvel - NLvel;  //ошибка левого колеса
     nlerrint += error * delta / 1000;  //рассчет интеграла
-    deriv = (error- nlerrorold) / (delta / 1000);  //рассчет дифференциальной составляюще
-    nlerrorold = error;
-    analogchange = error * PNL + nlerrint * INL + deriv * DNL;  //рассчет компенсации 
+    analogchange = error * PNL + nlerrint * INL;  //рассчет компенсации 
     NLmove(analogchange);  //сама компенсация
 //-----------------------------------------------------------------------------NR
     NRvelcalc();
     error = reqvel - NRvel;
     nrerrint += error * ((float)delta / 1000);
-    deriv = (error- nrerrorold) / ((float)delta / 1000);
-    nrerrorold = error;
-    analogchange = error * PNR + nrerrint * INR + deriv * DNR;
+    analogchange = error * PNR + nrerrint * INR ;
     NRmove(analogchange);
 //-----------------------------------------------------------------------------TL
     TLvelcalc();
     error = reqvel - TLvel;  //fixing motors
     tlerrint += error * ((float)delta / 1000);
-    deriv = (error- tlerrorold) / ((float)delta / 1000);
-    tlerrorold = error;
-    analogchange = error * PTL + tlerrint * ITL + deriv * DTL;
+    analogchange = error * PTL + tlerrint * ITL ;
     TLmove(analogchange);
 //-----------------------------------------------------------------------------TR
     TRvelcalc();
     error = reqvel - TRvel;  //fixing motors
     trerrint += error * ((float)delta / 1000);
-    deriv = (error- trerrorold) / ((float)delta / 1000);
-    trerrorold = error;
-    analogchange = error * PTR + trerrint * ITR + deriv * DTR;
+    //if (trerrint >500 ) trerrint = 500;
+    analogchange = error * PTR + trerrint * ITR ;
     TRmove(analogchange);
     timer = millis();
   }
-  sprintf(buf, "NOSE :Left wheel: %d; Right: %d  TAIL :Left wheel: %d; Right: %d", (int)NLvel, (int)NRvel, (int)TLvel, (int)TRvel);
-  Serial.println(buf);
+ // sprintf(buf, "NOSE :Left wheel: %d; Right: %d  TAIL :Left wheel: %d; Right: %d", (int)NLvel, (int)NRvel, (int)TLvel, (int)TRvel);
+//  Serial.println(buf);
+  servo1.write(104 + get_rotate);  //104 - magic numbers
   //sprintf(buf, "NOSE :Left wheel: %d; Right: %d  TAIL :Left wheel: %d; Right: %d", (int)(deriv * DNL), (int)(deriv * DNR), (int)(deriv * DTL), (int)(deriv * DTR));
   //Serial.println(buf);
+  msgdist.data = ultrasonic.distanceRead();
+  chatter_pub.publish(&msgdist);
+  nh.spinOnce();
 }
 
 //---------------------------------Функции расчета реальных скоростей
@@ -183,16 +175,12 @@ void loop() {
   */
 //-----------------------------------------------------------------------------NL
 void NLvelcalc() {
-//  nltickes = encNL.read();
   NLvel = ((nltickes / TICKVALUE) * 1000 / delta) * PI * DIAMETER;
-//  Encoder encNL(NLENCY,NLENCG);
   nltickes = 0;
 }
 //-----------------------------------------------------------------------------NR
 void NRvelcalc() {
-//  nrtickes = encNR.read();
   NRvel = ((nrtickes / TICKVALUE) * 1000 / delta) * PI * DIAMETER;
-//  Encoder encNR(NRENCY,NRENCG);
   nrtickes = 0;
 }
 //-----------------------------------------------------------------------------TL
@@ -206,30 +194,27 @@ void TRvelcalc() {
   trtickes = 0;
 }
 //-------------------------------------Функции расчета тиков
-//-----------------------------------------------------------------------------NLG
-//void NLGinterruptFunc() {
-//    nltickes++;
-//}
+//-----------------------------------------------------------------------------NL
 ////-----------------------------------------------------------------------------NLY
-void NLYinterruptFunc() {
+void NLinterruptFunc() {
     nltickes++;
 }
 ////-----------------------------------------------------------------------------NRG
-void NRGinterruptFunc() {
+void NRinterruptFunc() {
     nrtickes++;
 }
 ////-----------------------------------------------------------------------------NRY
 //
 ////-----------------------------------------------------------------------------TLG
-//void TLGinterruptFunc() {
-//    tltickes++;
-//}
+void TLinterruptFunc() {
+    tltickes++;
+}
 ////-----------------------------------------------------------------------------TLY
 //
 ////-----------------------------------------------------------------------------TRG
-//void TRGinterruptFunc() {
-//    trtickes++;
-//}
+void TRinterruptFunc() {
+    trtickes++;
+}
 //-----------------------------------------------------------------------------TRY
 
 
@@ -245,8 +230,8 @@ void NLmove( int speed)
   else
   {
     speed = -speed;
-    analogWrite(NLCCW, speed);
-    digitalWrite(NLCW, LOW);
+    analogWrite(NLCW, speed);
+    digitalWrite(NLCCW, LOW);
   }
 }
 //-----------------------------------------------------------------------------NR
@@ -260,8 +245,8 @@ void NRmove( int speed)
   else
   {
     speed = -speed;
-    analogWrite(NRCCW, speed);
-    digitalWrite(NRCW, LOW);
+    analogWrite(NRCW, speed);
+    digitalWrite(NRCCW, LOW);
   }
 }
 //-----------------------------------------------------------------------------TL
@@ -275,8 +260,8 @@ void TLmove( int speed)
   else 
   {
     speed = -speed;
-    analogWrite(TLCCW, speed);
-    digitalWrite(TLCW, LOW);
+    analogWrite(TLCW, speed);
+    digitalWrite(TLCCW, LOW);
   }
 }
 //-----------------------------------------------------------------------------TR
@@ -290,7 +275,7 @@ void TRmove( int speed)
   else
   {
     speed = -speed; 
-    analogWrite(TRCCW, speed);
-    digitalWrite(TRCW, LOW);
+    analogWrite(TRCW, speed);
+    digitalWrite(TRCCW, LOW);
   }
 }
